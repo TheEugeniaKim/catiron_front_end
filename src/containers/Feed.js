@@ -1,9 +1,13 @@
 import React from 'react'
+import Meow from '../components/Meow'
 
-const Feed = () => {
+function Feed(props) {
 
     return (
-        <h2> Feed</h2>
+        <div>
+            <h1>Meows</h1>
+            <Meow />
+        </div>
     )
 }
 

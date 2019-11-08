@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Meow = () => {
+
+function Meow(props){
 
     return (
-        <h2> Meow</h2>
+        <div class="meow">
+            <h4>Username here</h4>
+            <p>meow content here</p>
+        </div>
+        
     )
 }
 
