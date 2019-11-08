@@ -2,8 +2,17 @@ import React from 'react'
 
 const SignUp = () => {
 
+    
+   
+    
     return (
-        <h2> SignUp</h2>
+        <div>
+            <form>
+                <input type='text' name='name'/>
+                <input/>
+            </form>
+        </div>
+       
     )
 }
 
