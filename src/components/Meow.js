@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Meow = () => {
+const Meow = (props) => {
 
     return (
-        <h2> Meow</h2>
+        <div>
+            <h2>{props.username}</h2>
+            <h3>{props.content}</h3>
+        </div>
     )
 }
 

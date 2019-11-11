@@ -3,7 +3,11 @@ import React from 'react'
 const NavBar = () => {
 
     return (
-        <h2>NavBar </h2>
+        <div>
+            <a>Home</a>
+            <a>Profile</a>
+            <a>Create New Meow</a>
+        </div>
     )
 }
 
