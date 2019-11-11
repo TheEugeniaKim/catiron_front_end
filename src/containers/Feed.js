@@ -1,12 +1,15 @@
 import React from 'react'
+import { Card } from 'semantic-ui-react'
 import Meow from '../components/Meow'
 
 function Feed(props) {
 
     return (
-        <div>
-            <h1>Meows</h1>
-            <Meow />
+        <div className="Feed">
+            <Card.Group >
+                <Meow />
+            </Card.Group>
+           
         </div>
     )
 }
