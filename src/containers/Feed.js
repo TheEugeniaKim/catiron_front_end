@@ -7,7 +7,7 @@ function Feed(props) {
     return (
         <div className="Feed">
             <Card.Group >
-                <Meow />
+                <Meow  />
             </Card.Group>
            
         </div>

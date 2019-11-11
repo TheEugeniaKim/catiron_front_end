@@ -25,3 +25,15 @@
   height: 20vmin;
   width: 20;
 }
+
+.MeowFeed{
+  background: #00BCE1;
+width: 100vw;
+}
+
+.Meow{
+  align-content: center;
+  background: white;
+  text-align: justify;
+  
+}
