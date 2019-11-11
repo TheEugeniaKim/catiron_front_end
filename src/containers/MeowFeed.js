@@ -10,7 +10,7 @@ class MeowFeed extends React.Component{
                 <Card.Group>
                     {this.props.allMeows.map(meow => 
                     <Meow username={meow.username} 
-                    content={meow.content} 
+                    body={meow.body} 
                     likes={meow.likes}/>)
                     }
                 </Card.Group>
