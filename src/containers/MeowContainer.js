@@ -20,6 +20,7 @@ class MeowContainer extends React.Component{
         .then(meows => this.setState({allMeows: meows}))
     }
     render(){
+        console.log(this.state.allMeows)
         return (
             <div>
                 <Segment inverted>
