@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Divider, Grid, Segment, Header, Icon } from 'semantic-ui-react'
+import '../App.css';
+import { Button, Divider, Grid, Segment, Header, Image } from 'semantic-ui-react'
 import Login from './Login'
 
 function Welcome(props){
@@ -7,7 +8,7 @@ function Welcome(props){
     return (
         <div>
             <Header as='h2' icon textAlign='center'>
-                <Icon name='users' circular />
+                <Image src='/logo.png' className='logo' />
                 <Header.Content>Welcome to CatIron</Header.Content>
             </Header>
 

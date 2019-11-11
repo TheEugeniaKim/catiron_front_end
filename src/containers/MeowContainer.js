@@ -1,6 +1,7 @@
 import React from 'react'
+import '../App.css';
 import Feed from './Feed'
-import { Header, Container, Divider, Image, Segment} from 'semantic-ui-react'
+import { Header, Container, Divider, Image, Segment, Button} from 'semantic-ui-react'
 
 
 
@@ -12,9 +13,14 @@ class MeowContainer extends React.Component{
     render(){
         return (
             <div>
+                <Segment inverted>
+                <Image src='/logo.png' className='logo' />
+
                 <Header as='h2' floated='left'> Welcome {this.props.username}! </Header>
-                <button floated='right' onClick={this.props.logout}>Logout</button>
-                <br/>
+                <Button floated='right' onClick={this.props.logout}>Logout</Button>
+                <Divider inverted />
+                </Segment>
+              
                 <Container className='MeowFeed' >
                     <Feed />    
                 </Container>
