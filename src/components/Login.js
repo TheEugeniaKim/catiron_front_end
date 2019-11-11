@@ -5,6 +5,7 @@ import { Button, Form, Input } from 'semantic-ui-react'
 class Login extends React.Component{
 
     state = {
+        hasAccount: true,
         username: "",
         password: ""
     }
@@ -26,6 +27,10 @@ class Login extends React.Component{
     //based on what field is being changed
     formChangeHandler = (event) => {
         this.setState({[event.target.name]: event.target.value })
+    }
+
+    signUp = () => {
+        this.setState({hasAccount: false})
     }
     
     render(){

@@ -13,7 +13,9 @@ class App extends React.Component{
 
   state={
     loggedIn: false,
-    username: ""
+    
+    username: null,
+    newUser: null
   }
 
 //Login functionality passed down to Login form as a prop
@@ -25,6 +27,18 @@ class App extends React.Component{
   logout = () => {
     this.setState({loggedIn: false, username: ''})
   }
+
+  signUp = (newUserObj) => {
+    this.setState({newUser: newUserObj})
+  }
+
+
+
+
+
+  //Need button on landing page to pull up sign up form
+  //Button will only render if logged in is false
+  //Sign up form will create new user - new user name will be used to login new user
 
 
   render(){

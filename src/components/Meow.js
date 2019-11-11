@@ -6,11 +6,11 @@ function Meow(props){
 
     return (
         <Card className="Meow" style={{width: '100vw'}}>
-            <h4>Username here</h4>
-            <p>meow content here</p>
+            <h4>{props.username}</h4>
+            <p>{props.content}</p>
         </Card>
-        
     )
+        
 }
 
 export default Meow

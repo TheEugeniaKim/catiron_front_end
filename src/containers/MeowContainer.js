@@ -4,12 +4,21 @@ import Feed from './Feed'
 import { Header, Container, Divider, Image, Segment, Button} from 'semantic-ui-react'
 
 
+import MeowFeed from './MeowFeed'
 
 class MeowContainer extends React.Component{
-
+    state={
+        allMeows: []
+    }
     //Uses username passed down from app to greet the user
     
     //Provides user with option to logout - Logout button
+
+    componentDidMount(){
+        fetch('http://localhost:3000/meows')
+        .then(response => response.json())
+        .then(meows => this.setState({allMeows: meows}))
+    }
     render(){
         return (
             <div>
@@ -22,7 +31,7 @@ class MeowContainer extends React.Component{
                 </Segment>
               
                 <Container className='MeowFeed' >
-                    <Feed />    
+                     <MeowFeed allMeows={this.state.allMeows}/>  
                 </Container>
             </div>
         )
