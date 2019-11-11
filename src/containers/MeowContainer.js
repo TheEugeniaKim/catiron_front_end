@@ -1,9 +1,6 @@
 import React from 'react'
 import '../App.css';
-import Feed from './Feed'
-import { Header, Container, Divider, Image, Segment, Button} from 'semantic-ui-react'
-
-
+import { Header, Container, Divider, Image, Segment, Button, Search } from 'semantic-ui-react'
 import MeowFeed from './MeowFeed'
 
 class MeowContainer extends React.Component{
@@ -26,6 +23,7 @@ class MeowContainer extends React.Component{
                 <Image src='/logo.png' className='logo' />
 
                 <Header as='h2' floated='left'> Welcome {this.props.username}! </Header>
+                <Search floated='right' />
                 <Button floated='right' onClick={this.props.logout}>Logout</Button>
                 <Divider inverted />
                 </Segment>
