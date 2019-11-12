@@ -16,7 +16,7 @@ class App extends React.Component{
     
     username: null,
     newUser: null, 
-    catId: 0
+    catId: null
   }
 
 //Login functionality passed down to Login form as a prop
@@ -56,21 +56,17 @@ class App extends React.Component{
 //     })     
 // }
 
-
-
   //Need button on landing page to pull up sign up form
   //Button will only render if logged in is false
   //Sign up form will create new user - new user name will be used to login new user
 
-
   render(){
-    console.log(this.state.catId)
-        return (
-          <div> 
-              {this.state.loggedIn ? <MeowContainer logout={this.logout} username={this.state.username} catId={this.state.catId} /> : <Welcome login={this.login}/>}
-          </div>
-        );
-      }
+    return (
+      <div> 
+          {this.state.loggedIn ? <MeowContainer logout={this.logout} username={this.state.username} catId={this.state.catId}  /> : <Welcome login={this.login}/>}
+      </div>
+    );
+  }
 }
 
 export default App;

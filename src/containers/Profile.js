@@ -8,8 +8,10 @@ class Profile extends React.Component{
     state = {
         catMeows: []
     }
+
     componentDidMount(){
-        fetch('http://localhost:3000/cats/${this.props.catId}/feed')
+        console.log(this.props.catId)
+        fetch('http://localhost:3000/cats/[this.props.catId]/profile')
         .then(response => response.json())
         .then(meows => this.setState({catMeows: meows}))
     }
@@ -31,7 +33,7 @@ class Profile extends React.Component{
                
               
                 <Container className='MeowFeed'>
-                    <MeowFeed allMeows={this.state.allMeows}/>  
+                    <MeowFeed  />  
                 </Container>
             </div>
         )
