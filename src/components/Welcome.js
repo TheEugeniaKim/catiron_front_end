@@ -39,10 +39,11 @@ class Welcome extends React.Component{
             
                 <Divider vertical>Or</Divider>
             </Segment> :
+
             <Segment>
                 <Grid columns={1}>
                     <Grid.Column>
-                        <SignUp />
+                        <SignUp login={this.props.login}/>
                     </Grid.Column>
                 </Grid>
 
