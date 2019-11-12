@@ -15,13 +15,24 @@ class App extends React.Component{
     loggedIn: false,
     
     username: null,
-    newUser: null
+    newUser: null, 
+    catId: 0
   }
 
 //Login functionality passed down to Login form as a prop
   login = (username) => {
-    this.setState({loggedIn: true, username: username})
+    return fetch('http://localhost:3000/cats')
+    .then(response => response.json())
+    .then(cats => {
+      let cat = cats.find(cat => cat.username === username)
+      this.setState({
+        loggedIn: true, 
+        catId: cat.id,
+        username: cat.username
+      })
+    })     
   }
+  // old login functionality before we got the backend this.setState({loggedIn: true, username: username})
 
 //Logout functionality passed down to MeowContainer as a prop
   logout = () => {
@@ -32,7 +43,18 @@ class App extends React.Component{
     this.setState({newUser: newUserObj})
   }
 
-
+//   getCatIdByUsername = (username) => {
+//     return fetch('http://localhost:3000/cats')
+//     .then(response => response.json())
+//     .then(cats => {
+//         let cat = cats.find(cat => cat.username === username)
+//         this.setState({
+//           loggedIn: true, 
+//           catId: cat.id,
+//           username: cat.username
+//         })
+//     })     
+// }
 
 
 
@@ -42,9 +64,10 @@ class App extends React.Component{
 
 
   render(){
+    console.log(this.state.catId)
         return (
           <div> 
-              {this.state.loggedIn ? <MeowContainer logout={this.logout} username={this.state.username} /> : <Welcome login={this.login}/>}
+              {this.state.loggedIn ? <MeowContainer logout={this.logout} username={this.state.username} catId={this.state.catId} /> : <Welcome login={this.login}/>}
           </div>
         );
       }

@@ -26,7 +26,7 @@ class SignUp extends React.Component {
                 <Form.Input type='text' label='Username' name='name' value={this.state.name} onChange={this.formChangeHandler}/>
                 <Form.Input type='number' label='Age' name='age' value={this.state.age} onChange={this.formChangeHandler}/>
                 <Form.Input type='text' label='Motto' name='motto' value={this.state.motto} onChange={this.formChangeHandler}/>
-                <Button primary />
+                <Button primary content="Sign Up" />
 
             </Form>
         </div>

@@ -8,9 +8,6 @@ class Welcome extends React.Component{
     state={
         hasAccount: true
     } 
-
-
-
    
     signUp = () => {
         this.setState({hasAccount: false})
@@ -33,7 +30,7 @@ class Welcome extends React.Component{
                 </Grid.Column>
             
                 <Grid.Column verticalAlign='middle'>
-                    <Button onClick={this.signUp}content='Sign up' icon='signup' size='big' />
+                    <Button onClick={this.signUp} content='Sign up' icon='signup' size='big' />
                 </Grid.Column>
                 </Grid>
             

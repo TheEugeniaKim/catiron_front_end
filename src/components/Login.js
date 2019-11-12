@@ -7,7 +7,7 @@ class Login extends React.Component{
     state = {
         hasAccount: true,
         username: "",
-        password: ""
+        password: "",
     }
     //Submit Handler function - prevents user from logging in if either
     //Username field or password are blank - alerts user
@@ -20,7 +20,8 @@ class Login extends React.Component{
         if(this.state.username === '' || this.state.password === ''){
             alert('Please enter a valid username or password')
         }
-        else {this.props.login(this.state.username)}
+        else 
+            {this.props.login(this.state.username)}
     }
 
     //Form change handler dyanamically changes state of the form 
@@ -32,7 +33,7 @@ class Login extends React.Component{
     signUp = () => {
         this.setState({hasAccount: false})
     }
-    
+
     render(){
             return ( 
                 <div>
