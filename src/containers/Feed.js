@@ -9,7 +9,6 @@ function Feed(props) {
             <Card.Group >
                 <Meow  />
             </Card.Group>
-           
         </div>
     )
 }

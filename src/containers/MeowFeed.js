@@ -5,6 +5,7 @@ import { Card } from 'semantic-ui-react'
 
 class MeowFeed extends React.Component{
     render(){
+        console.log(this.props.allMeows)
         return (
             <div>
                 <Card.Group>
