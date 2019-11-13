@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import MeowContainer from './containers/MeowContainer';
 import Welcome from './components/Welcome';
+import NavBar from './components/NavBar'
 
 class App extends React.Component{
 
@@ -15,10 +16,13 @@ class App extends React.Component{
     loggedIn: false,
     
     username: null,
-    newUser: null
+    currentUser: null,
+    displayTerm: null
   }
 
 //Login functionality passed down to Login form as a prop
+//find user where the user.username is equal to the username
+//grab user obj and set state of current user to equal obj
   login = (username) => {
     this.setState({loggedIn: true, username: username})
   }
@@ -28,9 +32,13 @@ class App extends React.Component{
     this.setState({loggedIn: false, username: ''})
   }
 
-  signUp = (newUserObj) => {
-    this.setState({newUser: newUserObj})
-  }
+  // signUp = (newUserObj) => {
+  //   this.setState({newUser: newUserObj})
+  // }
+
+  changeDisplay = (term) => {
+    this.setState({displayTerm: term})
+  } 
 
 
 
@@ -41,10 +49,16 @@ class App extends React.Component{
   //Sign up form will create new user - new user name will be used to login new user
 
 
-  render(){
-        return (
+  render(){  
+    return (
           <div> 
-              {this.state.loggedIn ? <MeowContainer logout={this.logout} username={this.state.username} /> : <Welcome login={this.login}/>}
+              {this.state.loggedIn ? 
+              <div>
+                <NavBar changeDisplay={this.changeDisplay} />
+                <MeowContainer logout={this.logout} username={this.state.username} display={this.state.displayTerm}/> 
+              </div>
+              : 
+              <Welcome login={this.login}/>}
           </div>
         );
       }
